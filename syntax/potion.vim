@@ -29,10 +29,13 @@ syntax keyword potionKeyword class return
 
 syntax keyword potionFunction print join string
 
+syntax region potionString start=/\v"/ skip=/\v\\./ end=/\v"/
+
 highlight link potionComment Comment
 highlight link potionOperator Operator
 highlight link potionKeyword Keyword
 highlight link potionFunction Function
 highlight link potionNumber Number
+highlight link potionString String
 
 let b:current_syntax = "potion"
