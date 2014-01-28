@@ -2,6 +2,7 @@
 factorial = (n):
     total = 1
     n to 1 (i):
+        # multiple total by i
         total *= i.
     total.
 
@@ -10,3 +11,6 @@ factorial = (n):
     '! is: ' print
     factorial (i) string print
     "\n" print.
+
+    "This is a string."
+    "foo \\" bar"
