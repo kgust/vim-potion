@@ -1,30 +1,11 @@
-# EXTRA CREDIT) - TODO
-# 1. Save the file before running the mapping
-# 2. Detect when the potion compiler returns and error and show error message.
-# 3. Detect if the bytecode window is already open and use that if possible.
-# 4. Create a potionbytecode.vim syntax highlighting file.
+" EXTRA CREDIT - TODO
+" 1. Save the file before running the mapping
+" 2. Detect when the potion compiler returns and error and show error message.
+" 3. Detect if the bytecode window is already open and use that if possible.
+" 4. Create a potionbytecode.vim syntax highlighting file.
 if !exists("g:potion_command")
     let g:potion_command = "potion"
 endif
 
-function! PotionCompileAndRunFile()
-    silent !clear
-    execute "!" . g:potion_command . " " . bufname("%")
-endfunction
-
-function! PotionShowBytecode()
-    " Get the bytecode.
-    let bytecode = system(g:potion_command . ' -c -V ' . bufname('%'))
-
-    " Open a new split and set it up.
-    vsplit __Potion_Bytecode__
-    normal! ggdG
-    setlocal filetype=potionbytecode
-    setlocal buftype=nofile
-
-    " Insert the bytecode.
-    call append(0, split(bytecode, '\v\n'))
-endfunction
-
-nnoremap <buffer> <localleader>r :call PotionCompileAndRunFile()<cr>
-nnoremap <buffer> <localLeader>b :call PotionShowBytecode()<cr>
+nnoremap <buffer> <localleader>r :call potion#running#PotionCompileAndRunFile()<cr>
+nnoremap <buffer> <localLeader>b :call potion#running#PotionShowBytecode()<cr>
