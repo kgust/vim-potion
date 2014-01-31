@@ -49,8 +49,6 @@ Section 2.1: Functions
 	- Calling this function will compile the file and show it's bytecode
 	in a vertical split
 
-
-
 ==============================================================================
 Section 3: Mappings                                           *PotionMappings*
 
@@ -64,15 +62,18 @@ g:potion_mappings before remapping them to whatever you desire.
 ==============================================================================
 Section 4: Configuration                                 *PotionConfiguration*
 
-g:potion_command		This is for compiling/running the program.
-				default = 'potion'
+4.1 g:potion_command
 
-g:potion_mappings		set to 1 to disable default key mappings
+This is for compiling/running the program.  Default: 'potion'
 
-g:potion__section_mappings	set to 1 to disable default section mappings
-				(don't do this unless you know what you're
-				doing)
+4.2 g:potion_mappings
 
+Set to 1 to disable default key mappings. Default: off
+
+4.3 g:potion__section_mappings
+
+Set to 1 to disable default section key mappings. Default: off
+Note Don't do this unless you know what you're doing.
 
 ==============================================================================
 Section 5: License                                             *PotionLicense*
@@ -94,17 +95,22 @@ Section 6: Bugs                                                   *PotionBugs*
 
 None known at this time.  They are still busy breeding.
 
+If you do manage to spot a bug, please report it on the GitHub issue tracker:
+http://github.com/kgust/vim-potion/issues/
+
 ==============================================================================
 Section 7: Contributing                                   *PotionContributing*
 
-Contributions in the form of Issues and Pull requests are accepted
-for this plugin on Github (https://github.com/kgust/vim-potion).
+Can you make this plugin better?  Fork it on GitHub and send a pull request.
+
+GitHub: https://github.com/kgust/vim-potion/
 
 ==============================================================================
 Section 8: Changelog                                         *PotionChangelog*
 
-Version 0.9 - Steve Losh version (Kevin's variant). See |PotionCredits|.
-
+Version 0.9:
+	* Steve Losh inspired. See |PotionCredits|.
+	* Kevin's variant
 
 ==============================================================================
 Section 9: Credits                                             *PotionCredits*
