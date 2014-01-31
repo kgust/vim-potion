@@ -7,5 +7,8 @@ if !exists("g:potion_command")
     let g:potion_command = "potion"
 endif
 
-nnoremap <buffer> <localleader>r :call potion#running#PotionCompileAndRunFile()<cr>
-nnoremap <buffer> <localLeader>b :call potion#running#PotionShowBytecode()<cr>
+if !exists("g:potion_mappings")
+    nnoremap <buffer> <localleader>r :call potion#running#PotionCompileAndRunFile()<cr>
+    nnoremap <buffer> <localLeader>b :call potion#running#PotionShowBytecode()<cr>
+    let g:potion_mappings = 1
+endif

@@ -20,13 +20,15 @@ function! s:NextSection(type, backwards, visual)
     execute 'silent normal! ' . dir . pattern . dir. flags . "\r"
 endfunction
 
-noremap <script> <buffer> <silent> ]] :call <SID>NextSection(1, 0, 0)<cr>
-noremap <script> <buffer> <silent> [[ :call <SID>NextSection(1, 1, 0)<cr>
-noremap <script> <buffer> <silent> [] :call <SID>NextSection(2, 0, 0)<cr>
-noremap <script> <buffer> <silent> ][ :call <SID>NextSection(2, 1, 0)<cr>
+if !exists("g:potion_section_mappings")
+    noremap <script> <buffer> <silent> ]] :call <SID>NextSection(1, 0, 0)<cr>
+    noremap <script> <buffer> <silent> [[ :call <SID>NextSection(1, 1, 0)<cr>
+    noremap <script> <buffer> <silent> [] :call <SID>NextSection(2, 0, 0)<cr>
+    noremap <script> <buffer> <silent> ][ :call <SID>NextSection(2, 1, 0)<cr>
 
-vnoremap <script> <buffer> <silent> ]] :<c-u>call <SID>NextSection(1, 0, 1)<cr>
-vnoremap <script> <buffer> <silent> [[ :<c-u>call <SID>NextSection(1, 0, 1)<cr>
-vnoremap <script> <buffer> <silent> [] :<c-u>call <SID>NextSection(2, 0, 1)<cr>
-vnoremap <script> <buffer> <silent> ][ :<c-u>call <SID>NextSection(2, 1, 1)<cr>
+    vnoremap <script> <buffer> <silent> ]] :<c-u>call <SID>NextSection(1, 0, 1)<cr>
+    vnoremap <script> <buffer> <silent> [[ :<c-u>call <SID>NextSection(1, 0, 1)<cr>
+    vnoremap <script> <buffer> <silent> [] :<c-u>call <SID>NextSection(2, 0, 1)<cr>
+    vnoremap <script> <buffer> <silent> ][ :<c-u>call <SID>NextSection(2, 1, 1)<cr>
+endif
 
