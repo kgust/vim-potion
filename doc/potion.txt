@@ -1,0 +1,122 @@
+*vim-potion.txt*	For Vim version 7.x	Last change: 2014 Jan 30
+
+                      ___      _   _              ~
+                     / _ \___ | |_(_) ___  _ __   ~
+                    / /_)/ _ \| __| |/ _ \| '_ \  ~
+                   / ___/ (_) | |_| | (_) | | | | ~
+                   \/    \___/ \__|_|\___/|_| |_| ~
+
+          Functionality for the Potion programming language.
+        Includes syntax highlighting, code folding, and more!
+
+==============================================================================
+CONTENTS                                                      *PotionContents*
+
+	1. Introduction ......... |PotionIntroduction|
+	2. Usage ................ |PotionUsage|
+	3. Mappings ............. |PotionMappings|
+	4. Configuration ........ |PotionConfiguration|
+	5. License .............. |PotionLicense|
+	6. Bugs ................. |PotionBugs|
+	7. Contributing ......... |PotionContributing|
+	8. Changelog ............ |PotionChangelog|
+	9. Credits .............. |PotionCredits|
+
+==============================================================================
+Section 1: Introduction                                   *PotionIntroduction*
+
+From the website: http://perl11.org/potion/
+Potion is a language created by Why the Lucky Stiff.  It is an object and
+mixin oriented (traits) language.
+
+This plugin adds support to Vim for syntax highlighting, compiling, folding,
+sections, running programs, viewing bytecode, etc.
+
+==============================================================================
+Section 2: Usage                                                 *PotionUsage*
+
+	*Todo	currently there is no compiler/make support
+
+Section 2.1: Functions
+
+	potion#running#PotionCompileAndRunFile()
+
+	- Calling this function will compile and run the file, showing
+	the results in Vim. Clearing the screen afterward may be necessary.
+
+	potion#running#PotionShowByteCode()
+
+	- Calling this function will compile the file and show it's bytecode
+	in a vertical split
+
+
+
+==============================================================================
+Section 3: Mappings                                           *PotionMappings*
+
+	<LocalLeader>r	Compiles and runs the current file.
+	<LocalLeader>b	Compiles and displays bytecode of the file.
+
+Note These mappings are currently in the ftplugin folder, so they will be
+loaded for every new potion file. You can override them by setting
+g:potion_mappings before remapping them to whatever you desire.
+
+==============================================================================
+Section 4: Configuration                                 *PotionConfiguration*
+
+g:potion_command		This is for compiling/running the program.
+				default = 'potion'
+
+g:potion_mappings		set to 1 to disable default key mappings
+
+g:potion__section_mappings	set to 1 to disable default section mappings
+				(don't do this unless you know what you're
+				doing)
+
+
+==============================================================================
+Section 5: License                                             *PotionLicense*
+
+vim-potion License
+------------------------------------------------------------------------------
+Free to use, change, distribute, or whatever.  This was heavily inspired
+by Steve Losh (see |PotionCredits|).
+
+Potion License
+------------------------------------------------------------------------------
+From the Potion website:
+See COPYING for legal information. It's an MIT license, which lets you do
+anything you want with this. I'm hoping that makes it very nice for folks who
+want to embed a little Potion in their app!
+
+==============================================================================
+Section 6: Bugs                                                   *PotionBugs*
+
+None known at this time.  They are still busy breeding.
+
+==============================================================================
+Section 7: Contributing                                   *PotionContributing*
+
+Contributions in the form of Issues and Pull requests are accepted
+for this plugin on Github (https://github.com/kgust/vim-potion).
+
+==============================================================================
+Section 8: Changelog                                         *PotionChangelog*
+
+Version 0.9 - Steve Losh version (Kevin's variant). See |PotionCredits|.
+
+
+==============================================================================
+Section 9: Credits                                             *PotionCredits*
+
+Written by Kevin Gustavson.
+
+This plugin is heavily inspired by Steve Losh:
+Learn Vimscript the Hard Way http://learnvimscriptthehardway.stevelosh.com/
+
+Credit also goes to Why the Lucky Stiff, who created the Potion language and
+inspired Steve Losh to create a Vim plugin to support it.
+http://perl11.org/potion/
+
+
+ vim:noexpandtab:textwidth=78:tabstop=8:filetype=help:norightleft:
